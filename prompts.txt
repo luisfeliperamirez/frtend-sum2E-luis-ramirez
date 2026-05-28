@@ -213,6 +213,15 @@ const medicosPorEspecialidad = {
 
 1 prompt: 
 
-2 respuesta:
-3 explicacion:
-4 modificacion:
+Añade un botón para volver a la página principal (index.html) en la pagina de solicitar turnos (turnos.html)
+
+2 respuesta: Se muestra correctamente el botón para volver en el encabezado del formulario
+3 explicacion: se agregó un botón para volver al la página principal, ya que no había manera fácil de volver al la página anterior si se entraba por error al formulario
+
+------------------------------------------------------------------------------------------
+1 prompt: 
+
+Utiliza las imagenes de la carpeta doctores y pon cada una en cada doctor como imagen. Pon la imagen llamada mapa de la carpeta images en donde debería de ir Mapa de Ubicación
+
+2 respuesta: Se agregaron imagenes placeholder en la secciones de los doctores y el mapa de ubicación
+3 explicacion: Se añadieron imagenes en los placeholder para que cuando haya que cambiarlas se aún más sencillo teniendo que cambiar solo la imagen y asi no tener que modificar más el código

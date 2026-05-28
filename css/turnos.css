@@ -43,6 +43,14 @@ body {
   margin-bottom: 1.75rem;
 }
 
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 .form-header h1 {
   margin: 0 0 0.5rem;
   font-size: clamp(2rem, 2.5vw, 2.5rem);
