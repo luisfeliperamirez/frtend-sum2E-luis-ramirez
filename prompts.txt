@@ -1,0 +1,53 @@
+1 prompt: 
+Archivos principales que utilizarás: index.html + styles.css con las tecnologias HTML5 semantico, CSS3 (Grid y Flexbox)
+
+Desarrolla la pagina principal (index.html) del sitio SaludPlus. Esta pagina debe presentar la clinica de 
+forma profesional, con informacion sobre sus especialidades medicas, el equipo de profesionales y las 
+obras sociales aceptadas.
+
+Con las siguientes secciones requeridas:
+
+1. Encabezado (Header)
+• Logo o nombre de la clinica: "SaludPlus".
+• Menu de navegacion con enlaces a las secciones de la pagina (navegacion interna con anclas): 
+Inicio, Especialidades, Medicos, Obras Sociales, Contacto.
+• El menu debe permanecer visible al hacer scroll (position: sticky o fixed).
+
+2. Seccion Hero
+• Imagen de fondo o fondo de color con degradado (CSS), en la carpeta images utiliza la imagen que hay dentro como fondo .
+• Titulo principal y subtitulo descriptivo.
+• Boton de llamada a la accion: "Solicitar turno" que redirija a turnos.html.
+• Indicadores de confianza: al menos 3 datos destacados (ej. cantidad de especialidades, años de 
+experiencia, pacientes atendidos).
+
+3. Especialidades Medicas
+• Grilla con al menos 6 especialidades disponibles (ej. Clinica General, Cardiologia, Pediatria, 
+Ginecologia, Traumatologia, Neurologia) cada una de las imagenes en la carpeta especialidades con su respectivo nombre.
+• Cada especialidad debe mostrar un icono o imagen representativa, nombre y breve descripcion.
+• Layout implementado con CSS Grid (minimo 3 columnas en pantallas grandes).
+
+4. Nuestros Medicos
+• Seccion con al menos 3 profesionales del equipo medico.
+• Cada tarjeta debe incluir: nombre completo, especialidad, breve descripcion o frase.
+• Placeholder de imagen (puede ser un div con fondo de color o imagen generica).
+• Layout con Flexbox.
+
+5. Obras Sociales
+• Lista o grilla con al menos 6 obras sociales y/o prepagas aceptadas (ej. OSDE, Swiss Medical, 
+Galeno, IOMA, Medicus, Sancor Salud).
+• Presentacion clara con nombre de cada cobertura.
+
+6. Contacto y Footer
+• Datos de contacto: direccion, telefono, email, horario de atencion.
+• Mapa placeholder (un div con texto o imagen representativa).
+• Footer con derechos reservados y nombre del autor.
+Requisitos CSS
+• Usar CSS Grid para la seccion de Especialidades.
+• Usar Flexbox para el header y la seccion de Medicos.
+• Paleta de colores coherente y profesional, acorde a un sitio medico.
+• Fuentes legibles; se puede usar Google Fonts (max. 2 familias).
+• El sitio debe verse correctamente en pantallas de al menos 1024px de ancho.
+
+2 respuesta sugerida: Entrega la página principal de la clinica completa con todos los Requisitos solicitados
+3 explicacion: El código sugerido formó la base principal de la página web de la clinica, además hizo correcto uso de las imagenes entregadas
+4 modificacion: algunos logos no encajaban de forma correcta en su recuadros por lo que se sugirió que se arreglara para que se logren ver acorde a su tamaño

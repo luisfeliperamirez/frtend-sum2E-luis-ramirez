@@ -1,0 +1,422 @@
+﻿:root {
+  --bg: #f4f8fb;
+  --surface: #ffffff;
+  --text: #0f1f2f;
+  --muted: #6b7a8c;
+  --primary: #1f6f8b;
+  --primary-dark: #174c63;
+  --accent: #39a0b3;
+  --shadow: 0 16px 40px rgba(15, 31, 47, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(15, 31, 47, 0.08);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  color: var(--primary-dark);
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.main-nav a {
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+  color: var(--primary);
+}
+
+.hero {
+  position: relative;
+  min-height: 84vh;
+  display: grid;
+  place-items: center;
+  background-image:
+    linear-gradient(180deg, rgba(13, 54, 74, 0.65), rgba(13, 54, 74, 0.35)),
+    url('../images/recepcao-clinica-com-sala-de-espera-no-saguao-das-instalacoes-balcao-de-registro-utilizado-para-pacientes-com-consultas-medicas-balcao-de-recepcao-vazio-no-centro-de-saude-para-visitas-de-check-up.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(57, 160, 179, 0.24), transparent 45%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: left;
+  display: grid;
+  gap: 1.25rem;
+  padding: 6rem 0 5rem;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  color: #d3f1ff;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 4vw, 4.2rem);
+  max-width: 720px;
+  line-height: 1.05;
+}
+
+.hero-text {
+  max-width: 680px;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.primary-button {
+  background: var(--accent);
+  color: #fff;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-1px);
+  background: #2fa8c2;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.trust-item {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.trust-item strong {
+  display: block;
+  font-size: 1.75rem;
+  color: #ffffff;
+}
+
+.section {
+  padding: 4.5rem 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--primary-dark);
+}
+
+.section-header p {
+  margin: 0.75rem auto 0;
+  max-width: 720px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.especialidades-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.especialidad-card {
+  background: var(--surface);
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 1rem;
+  align-items: start;
+}
+
+.especialidad-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  background: #f6fbff;
+  padding: 1rem;
+  border-radius: 18px;
+}
+
+.especialidad-card h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--primary-dark);
+}
+
+.especialidad-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.medicos-list {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.medico-card {
+  background: var(--surface);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  flex: 1 1 calc(33.333% - 1rem);
+  min-width: 260px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.medico-imagen {
+  min-height: 220px;
+  background: linear-gradient(135deg, rgba(31, 111, 139, 0.95), rgba(57, 160, 179, 0.85));
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.medico-imagen::after {
+  content: "Foto del médico";
+}
+
+.medico-detalle {
+  padding: 1.5rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.medico-detalle h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.medico-detalle span {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.medico-detalle p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.obras-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.obra-item {
+  background: var(--surface);
+  border-radius: 18px;
+  padding: 1.25rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--primary-dark);
+  box-shadow: var(--shadow);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.contact-info {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-card {
+  background: var(--surface);
+  border-radius: 22px;
+  padding: 1.3rem;
+  box-shadow: var(--shadow);
+}
+
+.contact-card h3 {
+  margin: 0 0 0.5rem;
+  color: var(--primary-dark);
+}
+
+.contact-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.map-placeholder {
+  background: linear-gradient(180deg, #e5f3f8 0%, #f8fbfc 100%);
+  border-radius: 24px;
+  min-height: 320px;
+  display: grid;
+  place-items: center;
+  color: var(--primary-dark);
+  text-align: center;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+}
+
+.site-footer {
+  background: #0f1f2f;
+  color: #dbe6f1;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 960px) {
+  .hero {
+    min-height: 72vh;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .especialidades-grid {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+
+  .medico-card {
+    flex: 1 1 100%;
+  }
+
+  .obras-grid {
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-nav {
+    gap: 1rem;
+  }
+
+  .hero-content {
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .section-header p {
+    padding: 0 1rem;
+  }
+
+  .especialidades-grid,
+  .obras-grid {
+    grid-template-columns: 1fr;
+  }
+}
