@@ -51,6 +51,7 @@ Requisitos CSS
 2 respuesta sugerida: Entrega la página principal de la clinica completa con todos los Requisitos solicitados
 3 explicacion: El código sugerido formó la base principal de la página web de la clinica, además hizo correcto uso de las imagenes entregadas
 4 modificacion: algunos logos no encajaban de forma correcta en su recuadros por lo que se sugirió que se arreglara para que se logren ver acorde a su tamaño
+------------------------------------------------------------------------------------------
 
 1 prompt: 
 Archivos principales que utilizarás: turnos.html + turnos.css con las tecnologias HTML5 con inputs semanticos, CSS3
@@ -121,6 +122,97 @@ Requisitos de estilos (css)
 2 respuesta sugerida: Entrega el formulario de turnos completo con cada detalle solicitado 
 3 explicacion: Al apretar el botón de solicitar turno nos envía correctamente al formulario de turnos (turnos.html) donde se puede visualizar correctamente todas las casillas de rellenado y los cuadros de selección con los botones: Limpiar formulario y Solicitar turno para finalizar la entrega de los datos
 4 modificacion: no se han hecho cambios respecto a este codigo ya que ha cumplido perfectamente con los requerimientos que se solicitan
+------------------------------------------------------------------------------------------
 
 1 prompt:
 
+Archivos principales que utilizarás: validaciones.js con las tecnologias JavaScript vanilla (ES6+), DOM manipulation
+
+Implementa todas las validaciones del formulario en el archivo js/validaciones.js. Las validaciones deben 
+ejecutarse al hacer submit del formulario e indicar visualmente el estado de cada campo mediante clases 
+CSS.
+
+Clases CSS para feedback visual
+Define en turnos.css las siguientes clases y aplicalas desde JavaScript:
+• campo-error: borde rojo, fondo rojo muy claro. Indica que el campo tiene un error.
+• campo-ok: borde verde, fondo verde muy claro. Indica que el campo es valido.
+• mensaje-error: texto de error pequeno de color rojo, visible debajo del campo.
+Reglas de validacion por campo
+
+Seccion 1 - Datos del paciente
+• Nombre y Apellido: obligatorio, solo letras y espacios (incluye tildes y ene). Expresion regular 
+sugerida: /^[a-zA-ZaeiouAEIOUuUnnNN\s]+$/
+• DNI: obligatorio, entre 7 y 8 digitos numericos.
+• Email: obligatorio, formato valido (usar expresion regular).
+• Telefono: obligatorio, formato valido (puede contener +, guiones y espacios, minimo 8 digitos).
+• Fecha de nacimiento: obligatoria, no puede ser una fecha futura, la edad debe estar entre 0 y 120 
+anos.
+
+Seccion 2 - Datos del turno
+• Especialidad: obligatoria (no puede quedar en la opcion vacia inicial).
+• Medico: obligatorio una vez que la especialidad esta seleccionada. Las opciones del select deben 
+actualizarse dinamicamente al cambiar la especialidad, usando un objeto JavaScript con los 
+medicos de cada especialidad.
+• Tipo de consulta: obligatorio.
+• Fecha del turno: obligatoria, no puede ser una fecha pasada, debe tener al menos 24 horas de 
+anticipacion desde el momento actual, y debe corresponder a un dia de semana (lunes a viernes; 
+rechazar sabados y domingos).
+• Hora del turno: obligatoria, debe estar dentro del horario de atencion (08:00 a 20:00).
+• Modalidad: obligatoria.
+• Plataforma preferida: obligatoria si la modalidad es "Videoconsulta".
+
+Seccion 3 - Cobertura medica
+• Cobertura: obligatoria.
+• Numero de credencial: obligatorio si la cobertura NO es "Particular". Debe tener al menos 5 
+caracteres alfanumericos.
+• Plan: obligatorio si la cobertura NO es "Particular".
+
+Seccion 4 - Informacion adicional
+• Como nos conocio: obligatorio si el checkbox de primera visita esta marcado.
+• Motivo de consulta: obligatorio, minimo 20 caracteres.
+• Descripcion de estudios: obligatoria si el checkbox de estudios previos esta marcado; minimo 20 
+caracteres.
+
+Comportamiento del formulario
+Campos condicionales
+Los siguientes campos deben mostrarse y ocultarse dinamicamente mediante JavaScript (modificando 
+display: none / display: block):
+• Medico: se habilita y actualiza sus opciones cuando el usuario selecciona una especialidad.
+• Plataforma preferida: se muestra solo cuando la modalidad seleccionada es "Videoconsulta".
+• Numero de credencial y Plan: se muestran cuando la cobertura es distinta de "Particular".
+• Como nos conocio: se muestra cuando el checkbox de primera visita esta marcado.
+• Descripcion de estudios: se muestra cuando el checkbox de estudios previos esta marcado.
+
+Manejo del submit
+• Usar preventDefault() para evitar el envio del formulario por defecto.
+• Recorrer todos los campos y aplicar campo-error o campo-ok segun corresponda.
+• Si existe al menos un error, usar element.scrollIntoView({ behavior: "smooth" }) para desplazarse al 
+primer campo invalido.
+• Si todos los campos son validos, mostrar un mensaje de confirmacion en pantalla con un numero de 
+turno generado con Math.random() (formato: TURN-XXXXX, donde X son digitos).
+• El mensaje de confirmacion debe incluir: nombre del paciente, especialidad, fecha y hora del turno, 
+y el numero de turno generado.
+
+Objeto de medicos por especialidad
+Define en validaciones.js un objeto JavaScript con la siguiente estructura (completa con al menos 2 medicos 
+por especialidad):
+
+const medicosPorEspecialidad = {
+ "clinica": ["Dr. Gomez, Carlos", "Dra. Lopez, Maria"],
+ "cardiologia": ["Dr. Perez, Juan", "Dra. Torres, Ana"],
+ "pediatria": ["Dra. Diaz, Laura", "Dr. Soto, Pablo"],
+ "ginecologia": ["Dra. Romero, Valeria", "Dra. Castro, Elena"],
+ "traumatologia": ["Dr. Ramos, Sergio", "Dr. Herrera, Diego"],
+ "neurologia": ["Dr. Molina, Andres", "Dra. Vargas, Cecilia"]
+};
+
+2 respuesta sugerida: Validación completa al enviar el formulario, clases visuales, campos condicionales que muestran/ocultan con JavaScript y confirmación en pantalla con número de turno en formato
+3 explicacion: se actualizaron los archivos validaciones.js, turnos.css y turnos.hmtl como se solicitaba, al testear con el formulario se pudo comprobar el correcto funcionamiento del script de validaciones
+4 modificacion: no se modificó el codigo sugerido, ya que ha cumplido satisfactoriamente con los requerimientos
+------------------------------------------------------------------------------------------
+
+1 prompt: 
+
+2 respuesta:
+3 explicacion:
+4 modificacion:

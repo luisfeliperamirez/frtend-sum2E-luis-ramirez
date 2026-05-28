@@ -14,6 +14,8 @@
         <p>Completa tus datos y elige el mejor horario para tu consulta en SaludPlus.</p>
       </header>
 
+      <div id="confirmacion" class="confirmacion hidden" aria-live="polite"></div>
+
       <form id="turnoForm">
         <fieldset>
           <legend>Datos del Paciente</legend>
@@ -52,7 +54,7 @@
           <label for="especialidad">Especialidad</label>
           <select id="especialidad" name="especialidad" required>
             <option value="">Selecciona una especialidad</option>
-            <option value="clinica-general">Clínica General</option>
+            <option value="clinica">Clínica General</option>
             <option value="cardiologia">Cardiología</option>
             <option value="pediatria">Pediatría</option>
             <option value="ginecologia">Ginecología</option>
@@ -162,64 +164,6 @@
     </section>
   </main>
 
-  <script>
-    const medicosPorEspecialidad = {
-      'clinica-general': ['Dra. Laura Méndez', 'Dr. Juan Torres'],
-      'cardiologia': ['Dr. Ignacio Pérez', 'Dra. Carla Núñez'],
-      'pediatria': ['Dra. Mariana López', 'Dr. Felipe Castro'],
-      'ginecologia': ['Dra. Ana Morales', 'Dra. Sofía Ruiz'],
-      'traumatologia': ['Dr. Martín Rojas', 'Dra. Valeria Díaz'],
-      'neurologia': ['Dr. Pablo Sánchez', 'Dra. Laura Medina']
-    };
-
-    const especialidadSelect = document.getElementById('especialidad');
-    const medicoSelect = document.getElementById('medico');
-    const modalidadSelect = document.getElementById('modalidad');
-    const plataformaGroup = document.getElementById('plataformaGroup');
-    const coberturaSelect = document.getElementById('cobertura');
-    const credencialGroup = document.getElementById('credencialGroup');
-    const primeraVisitaCheckbox = document.getElementById('primeraVisita');
-    const conocioGroup = document.getElementById('conocioGroup');
-    const estudiosPreviosCheckbox = document.getElementById('estudiosPrevios');
-    const descripcionEstudiosGroup = document.getElementById('descripcionEstudiosGroup');
-
-    especialidadSelect.addEventListener('change', () => {
-      const especialidad = especialidadSelect.value;
-      medicoSelect.innerHTML = '';
-
-      if (!especialidad || !medicosPorEspecialidad[especialidad]) {
-        medicoSelect.innerHTML = '<option value="">Selecciona una especialidad primero</option>';
-        medicoSelect.disabled = true;
-        return;
-      }
-
-      medicoSelect.disabled = false;
-      medicoSelect.innerHTML = '<option value="">Selecciona un médico</option>' +
-        medicosPorEspecialidad[especialidad].map(nombre => `<option value="${nombre}">${nombre}</option>`).join('');
-    });
-
-    modalidadSelect.addEventListener('change', () => {
-      plataformaGroup.classList.toggle('hidden', modalidadSelect.value !== 'videoconsulta');
-      const plataformaSelect = document.getElementById('plataforma');
-      plataformaSelect.required = modalidadSelect.value === 'videoconsulta';
-    });
-
-    coberturaSelect.addEventListener('change', () => {
-      const esParticular = coberturaSelect.value === 'particular';
-      credencialGroup.classList.toggle('hidden', esParticular);
-      document.getElementById('numeroCredencial').required = !esParticular;
-      document.getElementById('plan').required = !esParticular;
-    });
-
-    primeraVisitaCheckbox.addEventListener('change', () => {
-      conocioGroup.classList.toggle('hidden', !primeraVisitaCheckbox.checked);
-      document.getElementById('comoNosConocio').required = primeraVisitaCheckbox.checked;
-    });
-
-    estudiosPreviosCheckbox.addEventListener('change', () => {
-      descripcionEstudiosGroup.classList.toggle('hidden', !estudiosPreviosCheckbox.checked);
-      document.getElementById('descripcionEstudios').required = estudiosPreviosCheckbox.checked;
-    });
-  </script>
+  <script src="js/validaciones.js" defer></script>
 </body>
 </html>

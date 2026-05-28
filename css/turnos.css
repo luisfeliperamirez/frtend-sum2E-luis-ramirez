@@ -108,6 +108,23 @@ textarea:hover {
   border-color: var(--primary);
 }
 
+.campo-error {
+  border-color: #d9534f !important;
+  background: #fdecea !important;
+}
+
+.campo-ok {
+  border-color: #28a745 !important;
+  background: #e9f7ef !important;
+}
+
+.mensaje-error {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+  color: #d9534f;
+}
+
 textarea {
   resize: vertical;
 }
@@ -133,6 +150,26 @@ textarea {
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: flex-end;
+}
+
+.confirmacion {
+  background: #e8f9f8;
+  border: 1px solid #2fa8c2;
+  border-radius: 18px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #0f3d47;
+  box-shadow: 0 12px 26px rgba(47, 168, 194, 0.12);
+}
+
+.confirmacion h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.3rem;
+}
+
+.confirmacion p {
+  margin: 0.35rem 0;
+  line-height: 1.7;
 }
 
 .button {
