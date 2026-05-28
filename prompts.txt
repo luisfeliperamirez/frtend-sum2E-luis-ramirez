@@ -51,3 +51,76 @@ Requisitos CSS
 2 respuesta sugerida: Entrega la página principal de la clinica completa con todos los Requisitos solicitados
 3 explicacion: El código sugerido formó la base principal de la página web de la clinica, además hizo correcto uso de las imagenes entregadas
 4 modificacion: algunos logos no encajaban de forma correcta en su recuadros por lo que se sugirió que se arreglara para que se logren ver acorde a su tamaño
+
+1 prompt: 
+Archivos principales que utilizarás: turnos.html + turnos.css con las tecnologias HTML5 con inputs semanticos, CSS3
+
+Desarrolla el formulario de solicitud de turno en el archivo turnos.html. El formulario debe estar organizado 
+en secciones claramente diferenciadas y utilizar los elementos semanticos de HTML5 correctamente.
+
+Estructura del formulario
+Organiza el formulario en cuatro secciones usando <fieldset> y <legend>:
+
+Seccion 1: Datos del Paciente
+Campos requeridos:
+a) Nombre (type="text")
+b) Apellido (type="text")
+c) DNI (type="text")
+d) Correo electronico (type="email")
+e) Telefono (type="tel")
+f) Fecha de nacimiento (type="date")
+g) Genero (select): Masculino / Femenino / Otro / Prefiero no especificar
+
+Seccion 2: Datos del Turno
+Campos requeridos:
+h) Especialidad (select): Clinica General, Cardiologia, Pediatria, Ginecologia, Traumatologia, 
+Neurologia.
+i) Medico (select): Las opciones deben cambiar segun la especialidad seleccionada. Incluye al menos 
+2 medicos por especialidad. Este campo se habilita solo cuando hay una especialidad seleccionada.
+j) Tipo de consulta (select): Primera consulta / Control / Resultado de estudios.
+k) Fecha del turno (type="date").
+l) Hora del turno (type="time").
+m) Modalidad (select): Presencial / Videoconsulta.
+n) Plataforma preferida (select): Zoom / Google Meet / Teams. VISIBLE SOLO si la modalidad es "Videoconsulta".
+
+Seccion 3: Cobertura Medica
+Campos requeridos:
+o) Cobertura (select): OSDE / Swiss Medical / Galeno / IOMA / Medicus / Sancor Salud / Particular.
+p) Numero de credencial (type="text"): VISIBLE SOLO si la cobertura NO es "Particular".
+q) Plan (type="text"): VISIBLE SOLO si la cobertura NO es "Particular".
+
+Seccion 4: Informacion Adicional
+Campos requeridos:
+r) Primera visita (type="checkbox"): "Es la primera vez que consulta en SaludPlus". Al marcar esta 
+opcion, se muestra el campo "Como nos conocio".
+s) Como nos conocio (select): Busqueda en internet / Recomendacion de un conocido / Redes 
+sociales / Otro. VISIBLE SOLO si el checkbox anterior esta marcado.
+t) Motivo de consulta (textarea, rows="4"): Descripcion del motivo de la consulta.
+u) Estudios previos (type="checkbox"): "Tiene estudios previos relacionados con la consulta". Al 
+marcar esta opcion, se muestra el campo "Descripcion de estudios".
+v) Descripcion de estudios (textarea, rows="3"): VISIBLE SOLO si el checkbox anterior esta marcado.
+
+Boton de envio
+• Boton type="submit" con texto "Solicitar Turno".
+• Boton type="reset" con texto "Limpiar formulario".
+
+Requisitos de estructura HTML
+• Cada campo debe tener su etiqueta <label> con el atributo for correspondiente.
+• Los grupos de campos deben estar dentro de <fieldset> con su respectivo <legend>.
+• Usar los tipos de input correctos (email, tel, date, time, text, checkbox).
+• Agregar atributo placeholder descriptivo donde corresponda.
+• Los campos de la Seccion 2 que dependen de la especialidad deben usar el atributo disabled y 
+cambiar a enabled con JavaScript.
+
+Requisitos de estilos (css)
+• Formulario centrado en pantalla, con ancho maximo de 800px.
+• Cada seccion (fieldset) debe tener estilos visuales diferenciados (borde, fondo suave).
+• Los campos ocultos deben tener display: none; por defecto en CSS.
+• Aplicar estilos de hover y focus en los campos del formulario.
+
+2 respuesta sugerida: Entrega el formulario de turnos completo con cada detalle solicitado 
+3 explicacion: Al apretar el botón de solicitar turno nos envía correctamente al formulario de turnos (turnos.html) donde se puede visualizar correctamente todas las casillas de rellenado y los cuadros de selección con los botones: Limpiar formulario y Solicitar turno para finalizar la entrega de los datos
+4 modificacion: no se han hecho cambios respecto a este codigo ya que ha cumplido perfectamente con los requerimientos que se solicitan
+
+1 prompt:
+
